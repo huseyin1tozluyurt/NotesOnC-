@@ -3,26 +3,28 @@
 using namespace std;
 
 int main(){
-int a,b;
-cout<<"Enter the value of a: "<<endl;
-cin>>a;
-if(a>INT_MAX-b&&b>0){
-    
-    cout<<"Overflow";
-    exit(0);
-} 
-cout<<"Enter the value of b: "<<endl;
-cin>>b;
+	int num1, num2;
+	cout << "Type the first number for adding: ";
+	cin >> num1;
+	cout << "Type the second number for adding: ";
+	cin >> num2;
+
+	if (num1 > INT_MAX - num2 && num2 > 0)
+	{
+		cerr << "Overflow occured. "; //Input 2147483647 for num1 and a positive integer for num2 to have an overflow.
+
+	}
+	else if (num1 < INT_MIN - num2 && num2 < 0) {
+
+		cerr << "Underflow occured. ";//Input -2147483648 for num1 and a negative integer for num2 to have an underflow.
+
+	}
+	else {
+
+		cout << "The result of adding is: "<< num1 + num2 << " (an overflow or underflow has not been detected.)";
+	}
 
 
-if(a<INT_MIN-b&&b<0){
-    
-    cout<<"Underflow";
-    cout<<"The result of adding is: "<<a+b<<endl;
-    exit(0);
-}
 
 
-
-return 0;
 }
