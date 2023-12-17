@@ -16,10 +16,7 @@ int main(){
 	{
 		cout << ",";
 		if (power == 0)
-		{
-			result = 1;
 			break;
-		}
 		result = result * base;
 		cout << result;
 
